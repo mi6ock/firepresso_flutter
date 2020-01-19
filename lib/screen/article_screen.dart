@@ -33,17 +33,24 @@ class _ArticleScreenState extends State<ArticleScreen> {
                 child: Column(
                   children: <Widget>[
                     Center(
-                      child: Container(
-                        margin: EdgeInsets.only(top: 20),
-                        width: 1000, //幅
-                        height: 200, //高さ
-                        decoration: BoxDecoration(
-                          color: Colors.greenAccent, //色
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                        ),
-                      ),
+                      child: 
+            Draggable(
+            child: Container(
+            width: 150, //幅
+            height: 200, //高さ
+              color: Colors.greenAccent, //色
+              child: Center(child: Text("", style: Theme.of(context).textTheme.headline,),),
+            ),
+            feedback: Container(
+              child: Center(
+                child: Text("", style: Theme.of(context).textTheme.headline,),),
+              color: Colors.greenAccent, //色
+            width: 150, //幅
+            height: 200, //高さ
+            ),
+            onDraggableCanceled: (Velocity velocity, Offset offset){
+            },
+          ),                      
                     ),
                     Center(
                       child: Container(
