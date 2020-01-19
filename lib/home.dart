@@ -38,6 +38,18 @@ class Home extends StatelessWidget {
   }
   Draggable buildDraggable(String name, IconData childIcon) =>
       new Draggable(
+        onDragStarted: () {
+          print("Draggable.onDragStarted:");
+        },
+        onDraggableCanceled: (velocity, offset) {
+          print("Draggable.onDraggableCanceled: velocity: $velocity, offset: $offset");
+        },
+        onDragCompleted: () {
+          print("Draggable.onDragCompleted:");
+        },
+        onDragEnd: (details) {
+          print("Draggable.onDragEnd: details: $details");
+        },
         child: Icon(
           childIcon,
           size: 90,
