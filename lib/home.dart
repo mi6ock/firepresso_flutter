@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screen/article_screen.dart';
+
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,8 +17,14 @@ class Home extends StatelessWidget {
             ListTile(
               title: Text('記事追加'),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ArticleScreen();
+                    },
+                  ),
+                );
               },
             ),
             ListTile(
@@ -26,12 +34,8 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-      body: SizedBox(
-        height: 3000,
-        width: 300,
-        child: Container(
-          color: Colors.redAccent,
-        ),
+      body: Container(
+        child: Text("home"),
       ),
     );
   }
