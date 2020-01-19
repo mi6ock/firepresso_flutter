@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'screen/article_screen.dart';
 
 class Home extends StatelessWidget {
@@ -34,9 +33,22 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-      body: Container(
-        child: Text("home"),
-      ),
+      body: Center(child: buildDraggable("Draggable", Icons.filter_1)),
     );
   }
+  Draggable buildDraggable(String name, IconData childIcon) =>
+      new Draggable(
+        child: Icon(
+          childIcon,
+          size: 90,
+        ),
+        feedback: Icon(
+          Icons.android,
+          size: 90,
+        ),
+        childWhenDragging: Icon(
+          Icons.flag,
+          size: 90,
+        ),
+      );
 }
