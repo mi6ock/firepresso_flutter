@@ -16,8 +16,6 @@ class _ArticleScreenState extends State<ArticleScreen> {
           child: Column(
             children: <Widget>[
               ContainerSample(),
-              ContainerSample(),
-              ContainerSample(),
             ],
           ),
         ),
@@ -34,13 +32,43 @@ class _ArticleScreenState extends State<ArticleScreen> {
               child: Card(
                 child: Column(
                   children: <Widget>[
-                    Card(
-                      child: SizedBox(
-                        height: 100,
-                        width: size.width,
-                        child: Text(
-                          "text",
-                          style: Theme.of(context).textTheme.title,
+                    Center(
+                      child: Container(
+                        margin: EdgeInsets.only(top: 20),
+                        width: 1000, //幅
+                        height: 200, //高さ
+                        decoration: BoxDecoration(
+                          color: Colors.greenAccent, //色
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Center(
+                      child: Container(
+                        margin: EdgeInsets.only(top: 20),
+                        width: 500, //幅
+                        height: 200, //高さ
+                        decoration: BoxDecoration(
+                          color: Colors.yellowAccent, //色
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: Container(
+                        margin: EdgeInsets.only(top: 20),
+                        width: 200, //幅
+                        height: 200, //高さ
+                        decoration: BoxDecoration(
+                          color: Colors.redAccent, //色
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
                         ),
                       ),
                     ),
@@ -89,6 +117,16 @@ class _ArticleScreenState extends State<ArticleScreen> {
                   child: TextFormField(
                     decoration: const InputDecoration(
                       hintText: 'Width',
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      hintText: 'Color',
                     ),
                   ),
                 ),
